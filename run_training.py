@@ -56,7 +56,7 @@ def arg_parser():
     parser.add_argument('--num_cpus', type=int, help='Number of CPUs for the action masking computation', default=16)
     # Environment
     parser.add_argument('--fragments_file', type=str, help='Absolute or relative path to the set of fragments CSV',
-                        default='fragments.csv')
+                        default='data/fragments.csv')
     parser.add_argument('--embedding_atoms', type=str, help='Atom types for the embedding process', default='C,N,O,F,S,Cl,Br')
     parser.add_argument('--addition_atoms', type=str, help='Atom types for scaffold addition', default='C,N,O,F')
     parser.add_argument('--max_episode_steps', type=int, help='Maximum number of steps per episode', default=16)
@@ -110,7 +110,7 @@ if args.initial_scaffold == 'carbon':
     # De novo molecular design
     ls_scaffolds = ['C']
 else:
-    moses_dataset = pd.read_csv("data/MOSES_dataset.csv")
+    moses_dataset = pd.read_csv("data/MOSES_dataset.zip")
     # Molecule optimization
     ls_scaffolds = list(moses_dataset[moses_dataset['SPLIT'] == 'train'][10000:20000]['SMILES'])
 
