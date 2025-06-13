@@ -110,7 +110,7 @@ if args.initial_scaffold == 'carbon':
     # De novo molecular design
     ls_scaffolds = ['C']
 else:
-    moses_dataset = pd.read_csv("MOSES_dataset.csv")
+    moses_dataset = pd.read_csv("data/MOSES_dataset.csv")
     # Molecule optimization
     ls_scaffolds = list(moses_dataset[moses_dataset['SPLIT'] == 'train'][10000:20000]['SMILES'])
 
