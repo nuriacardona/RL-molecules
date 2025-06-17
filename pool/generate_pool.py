@@ -40,13 +40,13 @@ def arg_parser():
                         default='pool')
     # Checkpoint
     parser.add_argument('--checkpoint_path', type=str, help='Absolute or relative path to the checkpoint',
-                        default='example_checkpoint.pth')
+                        default='pool/example_checkpoint.pth')
     # Device
     parser.add_argument('--device', type=str, help='Device to run the model', choices=['cpu', 'cuda'], default='cpu')
     parser.add_argument('--num_cpus', type=int, help='Number of CPUs for the action masking computation', default=16)
     # Environment
     parser.add_argument('--fragments_file', type=str, help='Absolute or relative path to the set of fragments CSV',
-                        default='../data/fragments.csv')
+                        default='data/fragments.csv')
     parser.add_argument('--embedding_atoms', type=str, help='Atom types for the embedding process', default='C,N,O,F,S,Cl,Br')
     parser.add_argument('--addition_atoms', type=str, help='Atom types for scaffold addition', default='C,N,O,F')
     parser.add_argument('--max_episode_steps', type=int, help='Maximum number of steps per episode', default=16)
@@ -83,7 +83,7 @@ addition_atomtypes = args.addition_atoms.split(',')
 addition_fragmenttypes = list(fragments_pd[0])
 
 # Reference dataset (MOSES)
-moses_dataset = pd.read_csv("../data/MOSES_dataset.zip")
+moses_dataset = pd.read_csv("data/MOSES_dataset.zip")
 MOSES_train_split = list(moses_dataset[moses_dataset['SPLIT']=='train']['SMILES'])
 reference_dataset = MOSES_train_split[:10000]
 
