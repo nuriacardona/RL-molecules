@@ -49,6 +49,7 @@ The model can be used for both *de novo* molecular design and the optimization o
    python run_training.py
    ```
    🔹 **Important**: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+
    🔹 Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
       ```
        python run_training.py --help
