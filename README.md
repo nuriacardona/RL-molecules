@@ -13,18 +13,18 @@ The repository is structured around the following key files:
 
 ## Installation
 1. Install all required dependencies from `environment.yml` by running:
-```
-conda env create -f environment.yml
-```
+   ```
+   conda env create -f environment.yml
+   ```
 2. The environment should now be activated with:
-```
-conda activate Mol_RL
-```
+   ```
+   conda activate Mol_RL
+   ```
 3. Install customized RL environment for molecule generation:
-```
-cd gym-rl-molecules
-pip install -e .
-```
+   ```
+   cd gym-rl-molecules
+   pip install -e .
+   ```
 
 ## Usage
 **Model training**
@@ -37,12 +37,12 @@ wandb login <API_key>
 ```
 python run_training.py
 ```
-🔹 Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
+   🔹 Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
    ```
     python run_training.py --help
    ```
 
-🔹 Important: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+   🔹 Important: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
 
 
 **Pool generation**
@@ -51,11 +51,11 @@ Generate a pool of molecules from a model checkpoint.  An example of checkpoint 
 ```
 python pool/generate_pool.py
 ```
-🔹 For a detailed explanation of the command-line arguments, please use the following command:
-```
-python pool/generate_pool.py --help
-```
-🔹 Important: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+   🔹 For a detailed explanation of the command-line arguments, please use the following command:
+   ```
+   python pool/generate_pool.py --help
+   ```
+   🔹 Important: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
 
 
 **Synthetic experience creation**
@@ -64,11 +64,11 @@ The code for generating synthetic experiences is provided at `synthetic_experien
 ```
 python synthetic_experiences/synthetic_experiences.py
 ```
-🔹 For a detailed explanation of the command-line arguments, please use the following command:
-```
-python synthetic_experiences/synthetic_experiences.py --help
-```
-🔹 Important: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+   🔹 For a detailed explanation of the command-line arguments, please use the following command:
+   ```
+   python synthetic_experiences/synthetic_experiences.py --help
+   ```
+   🔹 Important: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
 
 
 
