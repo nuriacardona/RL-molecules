@@ -124,5 +124,5 @@ def check_action_idx(action_idx, total_actions_per_node, num_nodes, num_external
 
 # Saving synthetic experiences to file
 def save_synthetic_experiences(synthetic_experiences, filename="synthetic_experiences"):
-    torch.save(f"{synthetic_experiences}.pth", filename)
+    torch.save(synthetic_experiences, f"{filename}.pth")
     
