@@ -38,6 +38,8 @@ The model can be used for both *de novo* molecular design and the optimization o
 | `--qed_target`  | 0.8  | 1 |
 | `--initial_scaffold`  | carbon  | moses |
 
+The default behavior of all instructions below corresponds to *de novo* molecular design. For optimizing drug molecules, specify the corresponding command-line arguments.
+
 #### Run
 
 1. *(Optional, recommended)* Log in to Weights & Biases using your API key to track the training process:
@@ -64,6 +66,7 @@ python pool/generate_pool.py
    🔹 **Important**: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
    
    🔹 For a detailed explanation of the command-line arguments, please use the following command:
+   
       ```
       python pool/generate_pool.py --help
       ```
@@ -77,6 +80,7 @@ python synthetic_experiences/synthetic_experiences.py
    🔹 **Important**: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
    
    🔹 For a detailed explanation of the command-line arguments, please use the following command:
+   
       ```
       python synthetic_experiences/synthetic_experiences.py --help
       ```
