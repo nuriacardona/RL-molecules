@@ -27,7 +27,9 @@ The repository is structured around the following key files:
    ```
 
 ## Usage
-**Model training**
+General 
+
+#### Model training
 
 1. *(Optional, recommended)* Log in to Weights & Biases using your API key to track the training process:
 ```
@@ -37,12 +39,11 @@ wandb login <API_key>
 ```
 python run_training.py
 ```
-   🔹 Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
+   - Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
    ```
     python run_training.py --help
    ```
-
-   🔹 Important: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+   - Important: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
 
 
 **Pool generation**
