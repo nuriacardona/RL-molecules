@@ -27,49 +27,53 @@ The repository is structured around the following key files:
    ```
 
 ## Usage
-General 
 
-#### Model training
+### Model training
+#### General Considerations
+The model can be used for both *de novo* molecular design and the optimization of existing drug molecules. Each tasks is defined through the following command-line arguments:
+
+| Argument       | *De novo*      | Optimization   |
+|----------------|----------------|----------------|
+| `--max_episode_steps`  | 16  |   1  |
+| `--qed_target`  | 0.8  | 1 |
+| `--initial_scaffold`  | carbon  | moses |
+
+#### Run
 
 1. *(Optional, recommended)* Log in to Weights & Biases using your API key to track the training process:
-```
-wandb login <API_key>
-```
+   ```
+   wandb login <API_key>
+   ```
 2. Train the model:
-```
-python run_training.py
-```
-   - Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
    ```
-    python run_training.py --help
+   python run_training.py
    ```
-   - Important: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+   🔹 **Important**: if training is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+   🔹 Add any desired command-line arguments to customize the training. If Weights & Biases is used, add `--use_wandb=True`. For a detailed explanation of the options, please use the following command:
+      ```
+       python run_training.py --help
+      ```
 
+### Pool generation
 
-**Pool generation**
-
-Generate a pool of molecules from a model checkpoint.  An example of checkpoint is provided at `pool/example_checkpoint.pth`.
+Generate a pool of molecules from a model checkpoint.  An example of checkpoint for *de novo* molecular design is provided at `pool/example_checkpoint.pth`.
 ```
 python pool/generate_pool.py
 ```
+   🔹 **Important**: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
    🔹 For a detailed explanation of the command-line arguments, please use the following command:
-   ```
-   python pool/generate_pool.py --help
-   ```
-   🔹 Important: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
+      ```
+      python pool/generate_pool.py --help
+      ```
 
-
-**Synthetic experience creation**
+### Synthetic experience creation
 
 The code for generating synthetic experiences is provided at `synthetic_experiences/synthetic_experiences.py`. To run it, use the following command:
 ```
 python synthetic_experiences/synthetic_experiences.py
 ```
+   🔹 **Important**: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
    🔹 For a detailed explanation of the command-line arguments, please use the following command:
-   ```
-   python synthetic_experiences/synthetic_experiences.py --help
-   ```
-   🔹 Important: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
-
-
-
+      ```
+      python synthetic_experiences/synthetic_experiences.py --help
+      ```
