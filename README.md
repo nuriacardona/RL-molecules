@@ -66,7 +66,6 @@ python pool/generate_pool.py
    🔹 **Important**: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
    
    🔹 For a detailed explanation of the command-line arguments, please use the following command:
-   
       ```
       python pool/generate_pool.py --help
       ```
@@ -80,7 +79,6 @@ python synthetic_experiences/synthetic_experiences.py
    🔹 **Important**: if execution is made in a SLURM environment, add `srun` at the beginning of the command to guarantee proper parallelization.
    
    🔹 For a detailed explanation of the command-line arguments, please use the following command:
-   
       ```
       python synthetic_experiences/synthetic_experiences.py --help
       ```
