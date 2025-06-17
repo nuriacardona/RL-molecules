@@ -31,12 +31,12 @@ def arg_parser():
     parser.add_argument('--output_csv', type=str, help='Name of the output file to store the experiences',
                         default='synthetic_experiences')
     parser.add_argument('--smiles', type=str, help='File containing the original SMILES from which experiences will be generated',
-                        default='../data/MOSES_dataset.zip')
+                        default='data/MOSES_dataset.zip')
     parser.add_argument('--num_smiles', type=int, help='Number of smiles in "smiles" considered to generate experiences',
                         default=10000)
     parser.add_argument('--qed_target', type=float, help='Target QED value', choices=[0.7, 0.8, 0.9, 1], default=0.8)
     parser.add_argument('--fragments_file', type=str, help='Absolute or relative path to the set of fragments CSV',
-                        default='../data/fragments.csv')
+                        default='data/fragments.csv')
     parser.add_argument('--embedding_atoms', type=str, help='Atom types for the embedding process', default='C,N,O,F,S,Cl,Br')
     parser.add_argument('--addition_atoms', type=str, help='Atom types for scaffold addition', default='C,N,O,F')
     parser.add_argument('--backward_actions', type=bool, help='Allow backward actions', default=True)
