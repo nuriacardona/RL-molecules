@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/51dadd3a-a8f4-4154-9429-2c7b8ed69df8)# _De novo_ Molecular Design through RL-based Generative Models
-
 This repository contains the implementation of "_De novo_ Molecular Design through RL-based Generative Models".
 
 ## Project overview
