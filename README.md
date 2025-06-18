@@ -82,3 +82,4 @@ python synthetic_experiences/synthetic_experiences.py
       ```
       python synthetic_experiences/synthetic_experiences.py --help
       ```
+The synthetic experiences used for the article can be found at `synthetic_experiences/synthetic_experiences_de_novo.zip` (for *de novo* molecular design) and `synthetic_experiences/synthetic_experiences_optimize_existing.zip` (for the optimization of existing drug molecules).
